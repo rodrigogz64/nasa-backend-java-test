@@ -30,7 +30,8 @@ nasa-backend-java-test/
 │   │   │                   │   ├── repository/
 │   │   │                   │   │   └── PruebaInterfaz.java
 │   │   │                   │   └── restcontroller/
-│   │   │                   │       └── PruebaRestController.java
+│   │   │                   │       ├── PruebaRestController.java
+│   │   │                   │       └── EstadisticasController.java
 │   │   │                   └── NasaApoloApplication.java
 │   │   └── resources/
 │   │       └── application.properties
@@ -81,6 +82,17 @@ nasa-backend-java-test/
     ```
 4. Accede a la API en: http://localhost:8080/api/nasa
 5. Accede a la consola H2 en: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:nasa_db, Usuario: posgres, Contraseña: 1234)
+
+
+## Endpoints
+- GET /api/nasa : Obtiene los datos almacenados en la base de datos.
+- GET /api/nasa/paginado?page=0&size={limit} : Obtiene los datos almacenados en la base de datos paginados.
+- GET /api/nasa/center/{center}
+- GET /api/nasa/title?title={title}
+- GET /api/nasa/nasaid/{nasaId}
+- GET /api/nasa/id/{id}
+- GET /api/nasa/estadisticas : Obtiene las estadísticas de la API de NASA.
+
 ## Arquitectura
 Este proyecto sigue una arquitectura hexagonal (puertos y adaptadores) que separa claramente las capas de:
 
